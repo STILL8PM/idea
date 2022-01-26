@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Hello React!</title>
+    <script src="https://cdn.staticfile.org/react/16.4.0/umd/react.development.js"></script>
+    <script src="https://cdn.staticfile.org/react-dom/16.4.0/umd/react-dom.development.js"></script>
+    <script src="https://cdn.staticfile.org/babel-standalone/6.26.0/babel.min.js"></script>
+    <!-- react.min.js - React 的核心库 -->
+
+    <!-- react-dom.min.js - 提供与 DOM 相关的功能 -->
+
+    <!-- babel.min.js - Babel 可以将 ES6 代码转为 ES5 代码，这样我们就能在目前不支持 ES6 浏览器上执行 React 代码。Babel 内嵌了对 JSX 的支持。通过将 Babel 和 babel-sublime 包（package）一同使用可以让源码的语法渲染上升到一个全新的水平。 -->
+
+</head>
+
+<body>
+    <div id="example1"></div>
+    <p>---------------------------</p>
+    <script type="text/babel">
+        ReactDOM.render(//
+            <h1>example1</h1>,
+            document.getElementById('example1')
+        );
+    </script>
+    <!-- ---------------------------------------------------------------- -->
+
+
+    <div id="example2"></div>
+    <script type="text/babel">
+        function tick2() {
+            const element = (
+                <div >
+                    <h1>example2</h1>
+                    <h2 >{new Date().toLocaleTimeString()}.</h2>
+                    <p>---------------------------</p>
+                </div>
+            );
+            ReactDOM.render(
+                element,
+                document.getElementById('example2')
+            );
+        }
+        setInterval(tick2, 1000); //计时器1秒运行一次函数tick2
+    </script>
+    <!-- ---------------------------------------------------------------- -->
+
+
+    <div id="example3"></div>
+    <script type="text/babel">
+        function Clock(props) {
+            return (
+                <div>
+                    <h1>example3</h1>
+                    <h2>现在是 {props.date.toLocaleTimeString()}.</h2>
+                    <p>---------------------------</p>
+                </div>
+            );
+        }
+        function tick3() {
+            ReactDOM.render(
+                <Clock date={new Date()} />,
+                document.getElementById('example3')
+            );
+        }
+        setInterval(tick3, 1000);//计时器1秒运行一次函数tick3
+    </script>
+    <!-- ---------------------------------------------------------------- -->
+
+    <div id="example4"></div>
+    <script type="text/babel">
+        function Cl(p) {
+            return (
+                <div>
+                    <h1>example4</h1>
+                    <h2>现在是 {p.date.toLocaleTimeString()}.</h2>
+                    <p>---------------------------</p>
+                </div>
+            );
+        }
+        function tick4() {
+            ReactDOM.render(
+                <Cl date={new Date()} />,
+                document.getElementById('example4')
+            );
+        }
+        setInterval(tick4, 1000);
+    </script>
+    <!-- ---------------------------------------------------------------- -->
+
+    <div id="example5"></div>
+    <script type="text/babel">
+        class Clock extends React.Component {
+            render() {
+                return (
+                    <div>
+                        <h1>example5</h1>
+                        <h2>现在是 {this.props.date.toLocaleTimeString()}.</h2>
+                        <p>---------------------------</p>
+                    </div>
+                );
+            }
+        }
+        function tick5() {
+            ReactDOM.render(
+                <Clock date={new Date()} />,
+                document.getElementById('example5')
+            );
+        }
+        setInterval(tick5, 1000);
+    </script>
+    <!-- ---------------------------------------------------------------- -->
+
+
+    <style>
+        .foo {
+            color: bisque;
+        }
+    </style>
+
+    <div id="root"></div>
+    <p>---------------------------</p>
+    <script type="text/babel">
+        const element = <h1 class="foo">Hello, world</h1>;
+        ReactDOM.render(element, document.getElementById('root'));
+    </script>
+    <!-- ---------------------------------------------------------------- -->
+
+    <div id="tell you"></div>
+    <p>---------------------------</p>
+    <script type="text/babel">
+        ReactDOM.render(
+            <div>
+                <h1>菜鸟教程</h1>
+                <h2>欢迎学习 React</h2>
+                <p data-myattribute="somevalue">这是一个很不错的 JavaScript 库!</p>
+            </div>
+            ,
+            document.getElementById('tell you')
+        );
+    </script>
+    <!-- ---------------------------------------------------------------- -->
+
+    <style>
+        #true {
+            color: gray;
+            font-size: 30px;
+        }
+    </style>
+
+    <div id="true"></div>
+    <p>---------------------------</p>
+    <script type="text/babel">
+        var i = 1;
+        ReactDOM.render(
+            <div>
+                <h1>{i == 1 ? 'True!' : 'False'}</h1>
+            </div>
+            ,
+            document.getElementById('true')
+        );
+    </script>
+    <!-- ---------------------------------------------------------------- -->
+
+
+    <div id="color"></div>
+    <p>---------------------------</p>
+    <script type="text/babel">
+        var myStyle = {
+            fontSize: 50,
+            color: '#00FFFF'
+        };
+        ReactDOM.render(
+            <h1 style={myStyle}>Color</h1>,
+            document.getElementById('color')
+        );
+    </script>
+</body>
+
+</html>
