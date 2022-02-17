@@ -28,7 +28,6 @@
                     b React中的事件是通过事件委托方式处理的(委托给组件最外层的元素）————为了高效
                 (2).通过event.target得到发生事件的DOM元素对象
             */
-
             // 创建ref容器
             myRef = React.createRef()
             myRef2 = React.createRef()
@@ -41,7 +40,6 @@
             showData2 = () => {
                 alert(this.myRef2.current.value);
             }
-
             render() {
                 return (
                     <div>
