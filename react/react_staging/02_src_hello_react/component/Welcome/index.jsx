@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import { render } from "react-dom";
-import "./Hello.css"
+import "./index.css"
 
-export default class Hello extends Component {
+export default class Welcome extends Component {
     render() {
         return (
             <h2 className="title">
-                Hello.react!
+                Welcome
             </h2>
         )
     }
