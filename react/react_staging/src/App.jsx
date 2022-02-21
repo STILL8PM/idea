@@ -8,10 +8,6 @@ export default class App extends Component {
 	//初始化状态
 	state = {
 		todos: [
-			{ id: '001', name: '吃饭', done: true },
-			{ id: '002', name: '睡觉', done: false },
-			{ id: '003', name: '打代码', done: false },
-			{ id: '004', name: '逛街', done: true },
 		]
 	}
 	//addTodo用于添加一个todo，接收的参数是todo对象
@@ -39,12 +35,34 @@ export default class App extends Component {
 		//获取原来的todos
 		const { todos } = this.state
 		//删除指定id的todo对象
-		const newTodos= todos.filter((todoObj) => {
+		const newTodos = todos.filter((todoObj) => {
 			return todoObj.id !== id
 		})
 		//更新状态
-		this.setState({todos:newTodos})
+		this.setState({ todos: newTodos })
+	}
 
+	//checkAllTodo用于全选
+	checkAllTodo = (done) => {
+		//获取原来的todos
+		const { todos } = this.state
+		//加工数据
+		const newTodos = todos.map((todoObj) => {
+			return { ...todoObj, done: done }
+		})
+		//更新状态
+		this.setState({ todos: newTodos })
+	}
+	//清除所有已经完成的
+	clearAllTodo = (done) => {
+		//获取原来的todos
+		const { todos } = this.state
+		//加工数据
+		const newTodos = todos.filter((todoObj) => {
+			return !todoObj.done
+		})
+		//更新状态
+		this.setState({ todos: newTodos })
 	}
 	render() {
 		return (
@@ -52,7 +70,7 @@ export default class App extends Component {
 				<div className="todo-wrap">
 					<Header addTodo={this.addTodo} />
 					<List todos={this.state.todos} updateTodo={this.updateTodo} deleteTodo={this.deleteTodo} />
-					<Footer />
+					<Footer todos={this.state.todos} checkAllTodo={this.checkAllTodo} clearAllTodo={this.clearAllTodo} />
 				</div>
 			</div>
 		)
