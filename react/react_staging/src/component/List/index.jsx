@@ -3,38 +3,26 @@ import './index.css'
 
 export default class List extends Component {
     render() {
+        const { users, isFirst, isLoading, err } = this.props
         return (
             <div className="row">
-                <div className="card">
-                    <a href="https://github.com/reactjs" target="_blank" rel='noreferrer'>
-                        <img src="https://tse1-mm.cn.bing.net/th/id/OIP-C.ZeQ5h5qmFJdYmGKtrR-I9gAAAA?w=187&h=187&c=7&r=0&o=5&pid=1.7" style={{ width: '100px' }} alt='Head portrait'/>
-                    </a>
-                    <p className="card-text">reactjs</p>
-                </div>
-                <div className="card">
-                    <a href="https://github.com/reactjs" target="_blank" rel='noreferrer'>
-                        <img src="https://tse1-mm.cn.bing.net/th/id/OIP-C.ZeQ5h5qmFJdYmGKtrR-I9gAAAA?w=187&h=187&c=7&r=0&o=5&pid=1.7" style={{ width: '100px' }} alt='Head portrait'/>
-                    </a>
-                    <p className="card-text">reactjs</p>
-                </div>
-                <div className="card">
-                    <a href="https://github.com/reactjs" target="_blank" rel='noreferrer'>
-                        <img src="https://tse1-mm.cn.bing.net/th/id/OIP-C.ZeQ5h5qmFJdYmGKtrR-I9gAAAA?w=187&h=187&c=7&r=0&o=5&pid=1.7" style={{ width: '100px' }} alt='Head portrait'/>
-                    </a>
-                    <p className="card-text">reactjs</p>
-                </div>
-                <div className="card">
-                    <a href="https://github.com/reactjs" target="_blank" rel='noreferrer'>
-                        <img src="https://tse1-mm.cn.bing.net/th/id/OIP-C.ZeQ5h5qmFJdYmGKtrR-I9gAAAA?w=187&h=187&c=7&r=0&o=5&pid=1.7" style={{ width: '100px' }} alt='Head portrait'/>
-                    </a>
-                    <p className="card-text">reactjs</p>
-                </div>
-                <div className="card">
-                    <a href="https://github.com/reactjs" target="_blank" rel='noreferrer'>
-                        <img src="https://tse1-mm.cn.bing.net/th/id/OIP-C.ZeQ5h5qmFJdYmGKtrR-I9gAAAA?w=187&h=187&c=7&r=0&o=5&pid=1.7" style={{ width: '100px' }} alt='Head portrait'/>
-                    </a>
-                    <p className="card-text">reactjs</p>
-                </div>
+                {
+                    isFirst ? <h2>欢迎使用，输入关键字，随后点击搜索</h2> :
+                        isLoading ? <h2>Loading......</h2> :
+                            err ? <h2 style={{color: 'red'}}>{err}</h2> :
+                                users.map((userObj) => {
+                                    return (
+                                        <div key={userObj.id} className="card">
+                                            <a href={userObj.html_url} target="_blank" rel='noreferrer'>
+                                                <img src={userObj.avatar_url} style={{ width: '100px' }} alt='Head portrait' />
+                                            </a>
+                                            <p className="card-text">{userObj.login}</p>
+                                        </div>
+                                    )
+                                })
+                }
+
+
             </div>
         )
     }

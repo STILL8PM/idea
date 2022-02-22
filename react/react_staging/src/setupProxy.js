@@ -8,10 +8,5 @@ module.exports = function (app) {
             changeOrigin: true,//控制服务器收到的请求头中host字段的值
             pathRewrite: { '^/api1': '' }//重写请求路径
         }),
-        proxy('/api2', {
-            target: 'http://localhost:5001',
-            changeOrigin: true,
-            pathRewrite: { '^/api2': '' }
-        }),
     )
 }
