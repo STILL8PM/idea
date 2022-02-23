@@ -1,8 +1,7 @@
 import React, { Component } from 'react'
 import { Link, Route } from 'react-router-dom'
-import Header from './component/Header'//一般组件
-import About from './pagas/About'//路由组件
-import Home from './pagas/Home'//路由组件
+import About from './component/About/index'
+import Home from './component/Home/index'
 
 export default class App extends Component {
 	render() {
@@ -10,7 +9,7 @@ export default class App extends Component {
 			<div>
 				<div className="row">
 					<div className="col-xs-offset-2 col-xs-8">
-						<Header />
+						<div className="page-header"><h2>React Router Demo</h2></div>
 					</div>
 				</div>
 				<div className="row">
