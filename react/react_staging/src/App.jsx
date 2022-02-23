@@ -18,8 +18,8 @@ export default class App extends Component {
 							<a class="list-group-item" href="./home.html">Home</a> */}
 
 							{/* 在React中靠路由链接实现切换组件 */}
-							<Link className='list-group-item' to="/about">About</Link>
-							<Link className='list-group-item' to="/home">Home</Link>
+							{/* <Link className='list-group-item' to="/about">About</Link>
+							<Link className='list-group-item' to="/home">Home</Link> */}
 						</div>
 					</div>
 					<div class="col-xs-6">
