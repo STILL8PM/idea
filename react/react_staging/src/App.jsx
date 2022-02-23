@@ -6,9 +6,8 @@ import List from './component/List'
 export default class App extends Component {
 	render() {
 		return (
-			<div className="container">
-				<Search />
-				<List />
+			<div>
+				App
 			</div>
 		)
 	}
