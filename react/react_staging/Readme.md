@@ -1,3 +1,5 @@
+# 案例知识点
+
 ## 一、todoList 案例相关知识点
 
      1.拆分组件、实现静态组件，注意：className、style的写法
@@ -69,6 +71,8 @@
 ## 五、NavLink 与封装 NavLink
 
        1.NavLink可以实现路由链接的高亮，通过activeClassName指定样式名
+       2.标签体内容是一个特殊的标签属性
+       3.通过this.props.children可以获取标签体内容
 
 ## 六、Switch 的使用
 
