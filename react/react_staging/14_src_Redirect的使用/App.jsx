@@ -28,7 +28,7 @@ export default class App extends Component {
 								<Switch>
 									<Route path='/home' component={Home} />
 									<Route path='/about' component={About} />
-									<Redirect to='/about'/>{/*Redirect为重定向，兜底的  */}
+									<Redirect to='/home'/>{/*Redirect为重定向，兜底的  */}
 								</Switch>
 							</div>
 						</div>
