@@ -18,8 +18,8 @@ export default class App extends Component {
 				<div className="row">
 					<div className="col-xs-2 col-xs-offset-2">
 						<div className="list-group">
-							<MyNavLink to='/about' title='About' a={1} children='About' />
-							<MyNavLink to='/home/a/b' title='Home' children='Home' />
+							<MyNavLink to='/atguigu/about' title='About' a={1} children='About' />
+							<MyNavLink to='/atguigu/home' title='Home' children='Home' />
 						</div>
 					</div>
 					<div className="col-xs-6">
@@ -28,10 +28,8 @@ export default class App extends Component {
 								{/* 注册路由 */}
 								<Switch>
 									{/* Switch包裹则只匹配一次，不显示Test */}
-									{/* exact={true}，exact为精准匹配，默认模糊匹配 */}
-									<Route exact path='/about' component={About} />
-									<Route exact path='/home' component={Home} />
-									{/* <Route path='/test' component={Test} /> */}
+									<Route path='/atguigu/about' component={About} />
+									<Route path='/atguigu/home' component={Home} />
 								</Switch>
 							</div>
 						</div>
