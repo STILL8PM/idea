@@ -32,14 +32,12 @@ export default class Message extends Component {
     }
     back = () => {
         this.props.history.goBack()
-
     }
     forward = () => {
         this.props.history.goForward()
     }
-    go =()=> {
+    go = () => {
         this.props.history.go(-2)
-
     }
     render() {
         return (
@@ -66,7 +64,7 @@ export default class Message extends Component {
                     }
                     <hr />
                     <button onClick={this.back}>回退</button>&nbsp;&nbsp;
-                    <button onClick={this.forward}>前进</button>
+                    <button onClick={this.forward}>前进</button>&nbsp;&nbsp;
                     <button onClick={this.go}>GO</button>
                 </ul><hr />
 
