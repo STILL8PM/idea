@@ -17,8 +17,8 @@ export default class App extends Component {
 				<div className="row">
 					<div className="col-xs-2 col-xs-offset-2">
 						<div className="list-group">
-							<MyNavLink  to='/home' title='Home' children='Home' />
-							<MyNavLink  to='/about' title='About' a={1} children='About' />
+							<MyNavLink replace to='/home' title='Home' children='Home' />
+							<MyNavLink replace to='/about' title='About' a={1} children='About' />
 						</div>
 					</div>
 					<div className="col-xs-6">
